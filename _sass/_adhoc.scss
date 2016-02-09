@@ -316,8 +316,18 @@ a.bar {
 
   &.second, &.third, &.fourth {background: #fff;}
 
-
-
+  &.about {
+      background: rgba(0, 0, 0, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      p {
+          font-size: 20px;
+          color: #fff;
+          text-align: center;
+      }
+      a {
+          color: $secondary-color;
+      }
+  }
 
   &.second, &.third {
     padding: 0;
