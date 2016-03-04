@@ -739,6 +739,59 @@ html.touch ul.team {
 
 }
 
+// Bios
+
+.team {
+  background: rgba(0,0,0,.03);
+  padding: 2em 0;
+}
+
+.interior .bio {
+  padding: 1em 0 2em 0;
+  border-bottom: 1px solid #eee;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+  }
+
+  img {
+    margin: 0 0 1em 0;
+    width: 100%;
+    @media #{$small} {
+      border-radius: 50%;
+    }
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    -webkit-transition: all .24s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+
+  &:hover {
+
+    img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    }
+  }
+
+
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: .25em 0;
+  }
+}
+
 ul.cases li {
   a {
     display: block;
