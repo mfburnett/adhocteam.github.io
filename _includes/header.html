@@ -3,10 +3,10 @@
 <!--[if gt IE 8]><html class="no-js ie-good" lang="en"><![endif]-->
 <!--
 
-   ___     __  __ __           __   __   _____
-  / _ |___/ / / // /__  ____  / /  / /  / ___/
- / __ / _  / / _  / _ \/ __/ / /__/ /__/ /__
-/_/ |_\_,_/ /_//_/\___/\__/ /____/____/\___/
+   ___     __  __ __
+  / _ |___/ / / // /__  ____
+ / __ / _  / / _  / _ \/ __/
+/_/ |_\_,_/ /_//_/\___/\__/
 
 https://github.com/adhocteam/adhoc_homework
 
@@ -36,37 +36,7 @@ https://github.com/adhocteam/adhoc_homework
       h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
     })(document);
   </script>
-  <script>
-  if (typeof console !== 'undefined' && typeof console.log === 'function') {
-      if (!Array.prototype.map) {
-          Array.prototype.map = function(callback) {
-              var A = new Array(this.length);
-              for (var i = 0; i < this.length; i++) {
-                  A[i] = callback(this[i]);
-              }
-              return A;
-          }
-      }
-      var colors = [
-          '#ACE82A',
-          '#C9F281',
-          '#9DD348',
-          '#77B212',
-          '#6D6E71',
-          '#9DD348'
-      ];
-      var styles = colors.map(function(c) { return 'color: ' + c; });
-      console.log('%c██  %c██\n' +
-                  '\n' +
-                  '%c██  %c██\n\n' +
-                  '%cad%choc\n',
-                  styles[0], styles[1],
-                  styles[2], styles[3],
-                  'float: right; font-size: x-large; color: ' + colors[4],
-                  'float: right; font-size: x-large; color: ' + colors[5]);
-      console.log('%cWe want to work with you. https://github.com/adhocteam/adhoc_homework/', 'color: ' + colors[3]);
-  }
-  </script>
+  <script src="/assets/js/adhoc.js"></script>
   <script src="/assets/js/vendor/modernizr.js"></script>
   <script src="/assets/js/vendor/jquery-1.7.2.min.js"></script>
   <link rel="stylesheet" href="/assets/css/animate.css">
