@@ -87,6 +87,14 @@ p, ul, ol, dl, {
   padding: 1em 0;
 }
 
+// Page
+
+.page {
+  background: #fff;
+  padding: 2em 0;
+}
+
+
 // Banner
 
 .splash {
@@ -145,7 +153,6 @@ p, ul, ol, dl, {
     a {
       -webkit-transition: all .15s ease-in-out;
       overflow: hidden;
-
       -moz-transition: all .15s ease-in-out;
       -o-transition: all .15s ease-in-out;
       transition: all .15s ease-in-out;
@@ -268,7 +275,6 @@ nav {
 
 a.bar {
   position: relative;
-  opacity: .9;
    margin: 0; display: block; width: 100%;
    -webkit-transition: all .1s ease-in-out;
    -moz-transition: all .1s ease-in-out;
@@ -286,10 +292,24 @@ a.bar {
     }
   }
   &:hover, &:active {
-    opacity: 1;
+
     background: rgba(0,0,0,.1);
     border-bottom: 3px solid #fff; @media #{$small} {border-bottom: none;} text-decoration: none !important;
     svg {color: lighten($primary-color,25);}
+  }
+
+}
+
+html.no-touch {
+
+  a.bar {
+    position: relative;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    &:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
   }
 
 }
@@ -309,6 +329,7 @@ a.bar {
   }
   &.two {
     position: relative;
+    padding: 0;
     svg {
     left: 0;
     right: auto;
@@ -319,7 +340,7 @@ a.bar {
 }
 .pitch {
   a {display: block; border-bottom: none; border-top: none; text-decoration: none;}
-  @media #{$small} {padding: 3em 0;}
+  @media #{$small} {padding: 1.5em 0 2.5em 0;}
   &.home {color: #fff; p {font-size: 1.4em; padding-bottom: 2em;}}
 
   &.second, &.third, &.fourth {background: #fff;}
@@ -339,12 +360,22 @@ a.bar {
           display: inline;
           clear: none;
           font-weight: 600;
-          span {padding: .25em; font-size: inherit; color: $primary-color; background: #fff;}
+          span {
+              padding: 0 0;
+              font-size: inherit; color: #fff; border-bottom: 2px solid #fff;
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+          &:hover {
+            border-bottom: 2px solid $secondary-color;
+          }
+          }
       }
   }
 
-  &.second, &.third {
-    background: #fff url(../img/content/healthcare-large.png) center center no-repeat;
+  &.healthcare, &.cui, &.vets {
+    background: #fff;
     background-size: cover;
     padding: 1.5em 0;
 
@@ -364,9 +395,18 @@ a.bar {
     }
   }
 
+  &.vets {
+      background: #fff url(../img/content/vets-banner.png) center center no-repeat;
+      background-size: cover;
+  }
 
-  &.third {
-    background: #fff url(../img/content/cui-small.png) top left no-repeat; background-size: cover;
+  &.healthcare {
+      background: #fff url(../img/content/healthcare-large.png) center center no-repeat;
+  }
+
+
+  &.cui {
+    background: #fff url(../img/content/cui-small.png) 100% 0% no-repeat; background-size: cover;
 
     .action-button {
       background: rgba(255,255,255,.7);
@@ -422,7 +462,7 @@ a.bar {
   position: relative;
   .button-wrap {
     padding: .25em 0;
-    margin: 3em 1em 0 0;
+    margin: 1em 1em 2em 0;
     padding-left: .65em;
     display: inline-block;
     @media #{$small} {bottom: inherit; position: inherit;}
@@ -438,10 +478,29 @@ a.bar {
 
   h3 {font-size: 1em;}
 
-  span {
-    clear: both;
-    display: block;
-    font-size: .85em;
+  span.text {
+    display: inline;
+    background: white;
+    line-height: 1.15em;
+    color: $primary-color;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0 10px;
+
+    &.alt {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+
+
+
+  .description-wrap span.text {
+    color: #444;
+  }
+
+  .description-wrap span.text.alt {
+    color: #fff;
   }
 
 }
@@ -616,12 +675,12 @@ html.no-touch ul.team, ul.cases {
 
 
             &.window-shopping {
-              background: url(../img/content/healthcare.png) top center no-repeat;
+              background: #fff url(../img/content/healthcare.png) top center no-repeat;
               background-size: cover;
               }
 
             &.patient-evaluations {
-              background: url(../img/content/cui-small.png) top center no-repeat;
+              background: #fff url(../img/content/cui-small.png) top center no-repeat;
               background-size: cover;
               }
 
@@ -792,17 +851,44 @@ html.touch ul.team {
   }
 }
 
-ul.cases li {
+.primary.interior ul.cases {
+  margin: 0; padding: 0;
+}
+
+.primary.interior ul.cases li {
+  list-style: none;
+  margin: 0 0 1em 0;
+  border-bottom: none;
+  padding: 0;
+
+  h3 {margin: 0; padding: 0;}
+
+  span.text {
+    padding: .25rem;
+    margin-bottom: .5em;
+    -webkit-transition: all .24s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background: $primary-color;
+    color: #fff;
+    &:hover {
+      background: $action-color;
+    }
+  }
+
   a {
     display: block;
     padding: .5em;
-    border: 2px solid $primary-color;
+    border-bottom: none;
+
+    p {margin: 0; padding: 0;}
     &:hover {
-      background: $primary-color;
+      border-bottom: none;
       h3, {color: #fff;}
       }
     text-decoration: none;
-    h3 {display: block; padding: 0 0 1em 0; margin: 0; color: $secondary-color; margin: 0; font-size: 1.25em;}
+    h3 {display: block; padding: 0; margin: 0; color: $secondary-color; margin: 0; font-size: 2.25em;}
   }
   .name {
     -webkit-transition: all .24s ease-in-out;
@@ -811,28 +897,6 @@ ul.cases li {
     transition: all .2s ease-in-out;
   }
   &:hover .name {padding: 1em .5em; background: rgba(0,0,0,.8);}
-}
-
-html.touch ul.team {
-  li {
-
-    .name {
-      position: inherit;
-
-    }
-
-    .about {
-    position: relative;
-    overflow: visible;
-    min-height: none;
-    filter: grayscale(0%);
-    .description {
-      position: inherit;
-      bottom: 0;
-      height: 100%;
-    }
-    }
-  }
 }
 
 
