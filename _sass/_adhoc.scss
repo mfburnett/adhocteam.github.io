@@ -229,6 +229,8 @@ h2 {color: $primary-color; padding-bottom: 1em;}
 
    ul li {list-style-type: square;}
 
+   ol li {padding: .35em 0;}
+
   @media #{$small} {padding: 2em 0;}
   @media #{$medium} {padding: 4em 0;}
 
