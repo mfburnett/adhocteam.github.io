@@ -227,12 +227,20 @@ h2 {color: $primary-color; padding-bottom: 1em;}
   /*  background: rgba(0,0,0,.04); */
    padding: 1em 0 0 0;
 
+   ul li {list-style-type: square;}
+
   @media #{$small} {padding: 2em 0;}
   @media #{$medium} {padding: 4em 0;}
 
   h2 {font-size: 3em; font-weight: 700; padding-bottom: .5em;}
   h3 {
     padding: 0 0 .5em 0;
+  }
+
+  &.alt {
+   padding: 1em 0 0 0;
+   @media #{$small} {padding: 2em 0 0 0;}
+   @media #{$medium} {padding: 4em 0 0 0;}
   }
 }
 
@@ -304,8 +312,8 @@ html.no-touch {
 
   a.bar {
     position: relative;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
     &:hover {
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%);
@@ -1172,6 +1180,38 @@ button#trigger-overlay {
 	.overlay ul li {
 		min-height: 34px;
 	}
+}
+
+.band {
+  background: rgba(0,0,0,.05);
+  padding: 1em 0;
+  margin: 1em 0 0 0;
+  a:hover {
+    border-bottom: 2px solid $secondary-color; color: $secondary-color;
+  }
+  ul li {list-style-type: square; padding: .25em 0;}
+}
+
+ul.band-list {
+  margin: 0;
+  padding: 0;
+
+  h4 a {
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 1em 0 1em 0;
+    list-style: none;
+    display: block;
+    list-style-type: none;
+    &:nth-child(2n+1) {
+      background: #eee;
+    }
+
+  }
 }
 
 // SVG
