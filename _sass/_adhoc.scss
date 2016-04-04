@@ -819,6 +819,7 @@ html.touch ul.team {
   padding: 1em 0 2em 0;
   border-bottom: 1px solid #eee;
 
+
   h3 {
     padding: 0;
     margin: 0;
@@ -839,11 +840,14 @@ html.touch ul.team {
     transition: all .2s ease-in-out;
   }
 
+
+
   &:hover {
 
     img {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
+    margin-top: -.25em;
     }
   }
 
