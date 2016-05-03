@@ -1,0 +1,14 @@
+---
+layout: post
+permalink: /blog/index.html
+---
+
+<h1>Ad Hoc blog</h1>
+<ul class="blog-post-index">
+  {% for post in site.posts %}
+    <li class="blog-post">
+      <span class="blog-post-pubdate">{{ post.date | date: "%b %d, %Y" }}</span>:
+      <span class="blog-post-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+  {% endfor %}
+</ul>
