@@ -12,6 +12,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - CNAME
+  - Makefile
 
 #posts per page
 paginate: 1
