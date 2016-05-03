@@ -63,7 +63,17 @@
       </div>
 
       <div class="small-12 large-4 large-pull-8 columns list">
-        <h6>Ad Hoc</h6>
+
+        <h6>Posts</h6>
+
+        <ul class="posts">
+          {% for post in site.posts %}
+            {% if post.categories contains 'current' %}
+              <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> <span class="date">{{ post.date | date_to_string }}</span></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
 
         <ul>
           <li>
