@@ -39,6 +39,10 @@ markdown: kramdown
 timezone: America/New_York
 encoding: UTF-8
 
+collections:
+  team:
+    output: false
+
 sass:
   sass_dir: _sass
   style: :compressed

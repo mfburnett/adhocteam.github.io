@@ -1,0 +1,39 @@
+---
+layout: home
+---
+<div class="main" role="main">
+  <div class="primary interior">
+    <div class="row">
+    <div class="small-12 columns">
+      <h2>{{ page.title }}</h2>
+      {{ content }}
+    </div>
+    <!-- /.small-12 columns -->
+    </div>
+    <!-- /.row -->
+
+    <div class="team" data-ui="team-list">
+      <div class="row">
+        <div class="small-12 columns">
+          <h3>The Ad Hoc Team</h3>
+
+        {% for member in site.team %}
+          {% assign mod = forloop.index0 | modulo: 2 %}
+          {% if mod == 0 or forloop.first %}
+          <div class="row">
+          {% endif %}
+            {% include team-member.html member=member  %}
+          {% if mod == 1 or forloop.last %}
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+        <!-- /.small-12 columns -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.team -->
+  </div>
+  <!-- /.primary.interior -->
+</div>
+<!-- /.main -->

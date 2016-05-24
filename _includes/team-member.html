@@ -1,0 +1,46 @@
+<div class="small-12 large-6 columns" data-ui="team-member">
+  <div class="bio">
+    <div class="row">
+      <div class="small-12 medium-3 columns" data-ui="member-photo">
+        <img src="{{ member.photo }}" alt="Photo of {{ member.title }}, {{ member.position }} at Ad Hoc">
+      </div>
+      <!-- /member-photo .small-12 medium-3 columns -->
+
+      <div class="small-12 medium-9 columns" data-ui="member-bio">
+        <h3>{{ member.title }}</h3>
+        <p class="title">{{ member.position }}</p>
+        {{ member.content }}
+
+        {% for link in member.links %}
+          {% if forloop.first %}
+          <ul class="links" data-ui="member-links">
+          {% endif %}
+          <li>
+            <a href="{{ link.url }}" title="{{ link.title }}" target="_blank">{{ link.title }}</a>
+          </li>
+          {% if forloop.last %}
+            {% if member.github_username %}
+            <li>
+              <a href="https://github.com/{{ member.github_username }}" target="_blank">GitHub</a>
+            </li>
+            {% endif %}
+          </ul>
+          <!-- /member-links .links -->
+          {% endif %}
+        {% else %}
+          {% if member.github_username %}
+          <ul>
+            <li>
+              <a href="https://github.com/{{ member.github_username }}" target="_blank">GitHub</a>
+            </li>
+          </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- /member-bio .small-12.medium-9.columns -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.bio -->
+</div>
+<!-- /team-member .small-12 large-6 columns -->
