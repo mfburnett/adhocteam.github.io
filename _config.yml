@@ -1,5 +1,8 @@
 name: Ad Hoc
-
+description: >
+  Better government software. Services that work, for people.
+# for twitter card
+image: /assets/img/design/icons/apple-icon-touch-157-precomposed.png
 #URL of site, include http://, do not include a trailing slash
 #url: http://localhost:4000
 url: http://adhocteam.us
