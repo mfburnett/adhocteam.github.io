@@ -14,8 +14,6 @@ links:
   # Follow this format, for each link
   # - title:
   #   url:
-  - title:
-    url:
 ---
 
 James is a software engineer who has been writing code to help people obtain health insurance since the beginning of his career.  He is excited about helping to develop software that makes a difference in peoples lives.
