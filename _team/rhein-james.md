@@ -16,4 +16,4 @@ links:
   #   url:
 ---
 
-James is a software engineer who has been writing code to help people obtain health insurance since the beginning of his career.  He is excited about helping to develop software that makes a difference in peoples lives.
+James is a software engineer who has been writing code to help people obtain health insurance since the beginning of his career.  He is excited about helping to develop software that makes a difference in people's lives.
