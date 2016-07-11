@@ -15,7 +15,7 @@ links:
   # - title:
   #   url:
   - title: LinkedIn
-    url: www.linkedin.com/in/robert-fairhead
+    url: https://www.linkedin.com/in/robert-fairhead
 ---
 
 Bob has more than a decade of experience across government and the private sector.
