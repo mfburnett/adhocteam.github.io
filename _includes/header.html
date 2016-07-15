@@ -20,6 +20,18 @@ https://github.com/adhocteam/homework
   <title>{% if page.title %}{{ page.title }} - Ad Hoc{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'vhb1ims',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+
   <!-- Icons -->
   <link rel="shortcut icon" href="/assets/img/design/icons/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="/assets/img/design/icons/apple-icon-touch-57-precomposed.png">
@@ -28,15 +40,6 @@ https://github.com/adhocteam/homework
   <link rel="apple-touch-icon" sizes="157x157" href="/assets/img/design/icons/apple-icon-touch-157-precomposed.png">
   <link rel='stylesheet' href='/assets/css/style.css?v={{ site.github.build_revision }}'>
 
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'vhb1ims',
-        scriptTimeout: 3000
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
   <script src="/assets/js/adhoc.js"></script>
   <script src="/assets/js/vendor/modernizr.js"></script>
   <script src="/assets/js/vendor/jquery-1.7.2.min.js"></script>

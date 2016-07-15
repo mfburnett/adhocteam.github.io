@@ -19,6 +19,9 @@ html, body {
   font-size: 18px;
 }
 
+
+
+
 html, body {
   background: $primary-color url(../img/design/penrose.png) top center no-repeat;
   background-size: cover;
@@ -75,6 +78,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "proxima-nova", sans-serif;
 }
 
+html.wf-loading {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
 p, ul, ol, dl, {
   font-weight: 300;
   color: #444;
@@ -92,6 +102,49 @@ p, ul, ol, dl, {
 .page {
   background: #fff;
   padding: 2em 0;
+}
+
+// Fade animation
+
+.animated {
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.pitch {
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 
@@ -349,6 +402,10 @@ html.no-touch {
   }
 }
 .pitch {
+
+
+
+
   a {display: block; border-bottom: none; border-top: none; text-decoration: none;}
   @media #{$small} {padding: 1.5em 0 2.5em 0;}
   &.home {color: #fff; p {font-size: 1.4em; padding-bottom: 2em;}}
@@ -461,6 +518,13 @@ html.no-touch {
     h2 {color: #fff; padding-bottom: 1em; @media #{$small} {font-size: 2.8em;}  @media #{$medium} {font-size: 3.4em;}}
   }
 }
+
+html.wf-loading .pitch {
+  h2 {
+    font-size: 3.3em;
+  }
+}
+
 
 .case-studies {
   background: #fff;
@@ -581,7 +645,7 @@ html.no-touch ul.team, ul.cases {
       padding: 0;
       h3, p {margin: 0; padding: 0;}
       h3 {font-size: 1.2em; font-weight: 500;}
-      p.title {font-size: .85em; padding-bottom: 0; margin-bottom: 0; color: $primary-color;}
+      p.title {font-size: .85em; text-align: center; padding-bottom: 0; margin-bottom: 0; color: $primary-color;}
       .description {font-size: .8em;}
 
       ul {margin: 0; padding: 1em 0;}
@@ -756,7 +820,7 @@ html.touch ul.team {
       margin: 0 0 12em 0;
       @media #{$medium} {margin: 0 0 11em 0;}
       h3 {color: #fff; padding: 0; margin: 0; font-size: 1.3em !important;}
-      p.title {padding: 0; margin: 0; color: #fff;}
+      p.title {padding: 0; margin: 0; color: #fff; text-align: center;}
     }
     .description {
       color: #fff;
@@ -810,28 +874,44 @@ html.touch ul.team {
 
 // Bios
 
-.team {
+.primary.interior .team {
   background: rgba(0,0,0,.03);
   padding: 2em 0;
+  margin-top: 2em;
+  h3 {padding-bottom: 1em;}
 }
 
-.interior .bio {
-  padding: 1em 0 2em 0;
-  border-bottom: 1px solid #eee;
 
+.primary.interior .bio {
+  margin: 0 0 2em 0;
+  .card {
+    background: rgba(0,0,0,.05);
+    padding: .5em 1em;
+
+    @media #{$medium} {
+      min-height: 30em;
+    }
+  }
 
   h3 {
     padding: 0;
     margin: 0;
+    text-align: center;
     line-height: 1em;
   }
 
+  p.title {
+    text-align: center;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+  }
+
   img {
-    margin: 0 0 1em 0;
+    margin: -1.55em 0 1em 0;
     width: 100%;
-    @media #{$small} {
-      border-radius: 50%;
-    }
+    border-radius: 50%;
+    box-shadow: 3px 0 3px rgba(0,0,0,.1);
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
     -webkit-transition: all .24s ease-in-out;
@@ -843,11 +923,11 @@ html.touch ul.team {
 
 
   &:hover {
-
+    box-shadow: 0px 0px 5px rgba($primary-color,.05);
     img {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
-    margin-top: -.25em;
+    top: -.25em;
     }
   }
 
@@ -859,10 +939,14 @@ html.touch ul.team {
   }
 
   li {
-    list-style: none;
+    list-style: none !important;
     margin: 0;
     padding: .25em 0;
   }
+
+  a {
+    }
+
 }
 
 .primary.interior ul.cases {

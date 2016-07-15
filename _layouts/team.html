@@ -16,17 +16,12 @@ layout: home
       <div class="row">
         <div class="small-12 columns">
           <h3>The Ad Hoc Team</h3>
+          <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-ui="team-member">
+            {% for member in site.team %}
+              {% include team-member.html member=member  %}
+            {% endfor %}
+          </ul>
 
-        {% for member in site.team %}
-          {% assign mod = forloop.index0 | modulo: 2 %}
-          {% if mod == 0 or forloop.first %}
-          <div class="row">
-          {% endif %}
-            {% include team-member.html member=member  %}
-          {% if mod == 1 or forloop.last %}
-          </div>
-          {% endif %}
-        {% endfor %}
         </div>
         <!-- /.small-12 columns -->
       </div>

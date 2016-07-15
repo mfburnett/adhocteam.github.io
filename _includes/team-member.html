@@ -1,13 +1,14 @@
-<div class="small-12 large-6 columns" data-ui="team-member">
-  <div class="bio">
+<li class="bio">
+  <div class="card">
     <div class="row">
-      <div class="small-12 medium-3 columns" data-ui="member-photo">
+      <div class="small-12 medium-5 medium-centered columns" data-ui="member-photo">
         <img src="{{ member.photo }}" alt="Photo of {{ member.title }}, {{ member.position }} at Ad Hoc">
-      </div>
-      <!-- /member-photo .small-12 medium-3 columns -->
+      </div>  <!-- /member-photo .small-12 medium-5 columns -->
+    </div>  <!-- /row -->
 
-      <div class="small-12 medium-9 columns" data-ui="member-bio">
-        <h3>{{ member.title }}</h3>
+    <div class="row">
+      <div class="small-12 columns" data-ui="member-bio" class="team-card">
+        <h3 class="centered">{{ member.title }}</h3>
         <p class="title">{{ member.position }}</p>
         {{ member.content }}
 
@@ -37,10 +38,10 @@
           {% endif %}
         {% endfor %}
       </div>
-      <!-- /member-bio .small-12.medium-9.columns -->
+      <!-- /member-bio .small-12.columns -->
     </div>
-    <!-- /.row -->
+  <!-- /.row -->
   </div>
-  <!-- /.bio -->
-</div>
-<!-- /team-member .small-12 large-6 columns -->
+  <!-- /.card -->
+</li>
+<!-- /.bio -->
