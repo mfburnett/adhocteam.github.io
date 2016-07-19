@@ -16,9 +16,11 @@
           {% if forloop.first %}
           <ul class="links" data-ui="member-links">
           {% endif %}
+          {% if link.url and link.title %}
           <li>
             <a href="{{ link.url }}" title="{{ link.title }}" target="_blank">{{ link.title }}</a>
           </li>
+          {% endif %}
           {% if forloop.last %}
             {% if member.github_username %}
             <li>
