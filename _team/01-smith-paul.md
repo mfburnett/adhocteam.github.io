@@ -8,4 +8,9 @@ links:
       url: http://pauladamsmith.com
 ---
 
-Paul Smith is a software engineer who has been developing applications professionally for more than fifteen years. In addition to co-founding EveryBlock and being the deputy director of technology at the DNC during the re-election campaign of President Barack Obama, Paul was part of the team that fixed the troubled HealthCare.gov launch.
+Paul Smith is a software engineer who has been developing applications
+professionally for more than fifteen years. He was a co-founder of EveryBlock, a
+pioneering hyperlocal news startup. He worked on the 2012 re-election campaign
+of President Obama as the deputy director of technology of the <abbr
+title="Democratic National Committee">DNC</abbr>. Paul was a leader of the team
+that fixed HealthCare.gov after its troubled launch.
