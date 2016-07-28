@@ -7,7 +7,7 @@ position: COO
 github_username: neelbauer1
 # add the filename of the image you uploaded to the end of the
 # string below
-photo: /assets/img/content/neelbauer-juliana.png
+photo: /assets/img/content/neelbauer-juliana.jpg
 # Relevant website URLS
 # Do not include your GitHub profile, we add that automatically.
 links:
