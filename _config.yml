@@ -9,16 +9,17 @@ url: http://adhocteam.us
 
 #files to exclude, array
 exclude:
-  - README.md
-  - Rakefile
   - "/vendor/bundle"
+  - CNAME
   - Gemfile
   - Gemfile.lock
-  - CNAME
   - Makefile
+  - Rakefile
+  - README.md
+  - tests
 
 #posts per page
-paginate: 1
+# paginate:
 
 #number of items in RSS feed
 rss_limit: 20
