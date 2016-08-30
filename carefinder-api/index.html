@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+	<meta name="robots" content="no index">
+	<meta name="googlebot" content="no index">
+    <title>CareFinder API</title>
+</head>
+<body>
+<div class="container">
+    <h1>CareFinder API</h1>
+    <p></p>
+    
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        <table class="table table-bordered table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-v1-geoip">/api/v1/geoip</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-v1-geoip-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-v1-providers">/api/v1/providers</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-v1-providers-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-v1-share">/api/v1/share</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-v1-share-post">POST</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-v1-share--id-">/api/v1/share/{id}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-v1-share--id--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    
+    
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--api-v1-geoip"></span>
+            <div id="operation--api-v1-geoip-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/v1/geoip</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Attempt to determine a latitude/longitude from a user&#39;s ip address</p>
+            
+                    </section>
+                    
+                    
+                        <section class="sw-responses">
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Successful response</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/GeoLocation">GeoLocation</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Could not find a location based on the user&#39;s ip address</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--api-v1-providers"></span>
+            <div id="operation--api-v1-providers-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/v1/providers</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Searches for a list of <code>Provider</code> objects closest to a given zipcode.</p>
+            <p>Either lat &amp; lng or zipcode parameters must be present</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                q
+                                            <td><p>the search query</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                zipcode
+                                            <td><p>the 5-digit US zip code</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                type
+                                            <td><p>the type of provider to search for</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                        <span class="json-property-enum-item">home</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">dialysis</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">supplies</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">nursing</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">physician</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">hospital</span>
+                                                    
+                                                }
+                                                </span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                lat
+                                            <td><p>the WGS84 latitude to search for (overrides zipcode)</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                lng
+                                            <td><p>the WGS84 longitude to search for (overrides zipcode)</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Successful response</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Provider">Provider</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Bad request</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Couldn&#39;t find any providers for the given query</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--api-v1-share"></span>
+            <div id="operation--api-v1-share-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/api/v1/share</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Create a sharable comparison</p>
+            
+                    </section>
+                        
+                            <section class="sw-request-body">
+                                
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p></p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                        </div>
+                                        </div>
+                            </section>        
+                    
+                        <section class="sw-responses">
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Successfully created</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Bad request</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Couldn&#39;t find provider ids</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--api-v1-share--id-"></span>
+            <div id="operation--api-v1-share--id--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/v1/share/{id}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Load a previously saved comparison</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            <td><p>The previously saved share id</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Successful response</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Provider">Provider</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Couldn&#39;t find the shared comparison</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Address" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Address"></a>Address:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="street1">
+                                                <span class="json-property-name">street1:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="street2">
+                                                <span class="json-property-name">street2:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="city">
+                                                <span class="json-property-name">city:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="state">
+                                                <span class="json-property-name">state:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="zipcode">
+                                                <span class="json-property-name">zipcode:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-DialysisInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/DialysisInfo"></a>DialysisInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="provider_type">
+                                                <span class="json-property-name">provider_type:</span>
+                                                <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                <span class="json-property-enum-item">for-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">non-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">government</span>
+                                                            
+                                                        }
+                                                        </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="is_chain">
+                                                <span class="json-property-name">is_chain:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>True if the facility is part of a chain</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="has_late_shift">
+                                                <span class="json-property-name">has_late_shift:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>Facility has a shift starting at or after 5pm</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="stations">
+                                                <span class="json-property-name">stations:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The number of stations in the facility</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="services">
+                                                <span class="json-property-name">services:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                                        <span class="json-property-enum-item">hemodialysis</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">peritoneal dialysis</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">home hemodialysis training</span>
+                                                                                    
+                                                                                }
+                                                                                </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-Error" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Error"></a>Error:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="user_message">
+                                                <span class="json-property-name">user_message:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>a user-facing error message</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="client_message">
+                                                <span class="json-property-name">client_message:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>a client-facing error message</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-GeoLocation" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/GeoLocation"></a>GeoLocation:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="lat">
+                                                <span class="json-property-name">lat:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>WGS84 latitude</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="lng">
+                                                <span class="json-property-name">lng:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>WGS84 longitude</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-HomeHealthInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/HomeHealthInfo"></a>HomeHealthInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="zip_codes">
+                                                <span class="json-property-name">zip_codes:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>Zip codes where care is available</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                            <dt data-property-name="services">
+                                                <span class="json-property-name">services:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                                        <span class="json-property-enum-item">nursing care</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">physical therapy</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">occupational therapy</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">speech pathology</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">medical social services</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">home health aide</span>
+                                                                                    
+                                                                                }
+                                                                                </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-HospitalInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/HospitalInfo"></a>HospitalInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="ownership">
+                                                <span class="json-property-name">ownership:</span>
+                                                <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                <span class="json-property-enum-item">for-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">non-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">government</span>
+                                                            
+                                                        }
+                                                        </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="has_emergency_department">
+                                                <span class="json-property-name">has_emergency_department:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="uses_ehr">
+                                                <span class="json-property-name">uses_ehr:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="comparisons">
+                                                <span class="json-property-name">comparisons:</span>
+                                                <span class="json-property-type">object[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">object</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                                <section class="json-schema-properties">
+                                                                                    <dl>
+                                                                                            <dt data-property-name="label">
+                                                                                                <span class="json-property-name">label:</span>
+                                                                                                <span class="json-property-type">string</span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                            <dt data-property-name="comparison">
+                                                                                                <span class="json-property-name">comparison:</span>
+                                                                                                <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                                                                <span class="json-property-enum-item">better</span>
+                                                                                                            ,
+                                                                                                                <span class="json-property-enum-item">worse</span>
+                                                                                                            ,
+                                                                                                                <span class="json-property-enum-item">similar</span>
+                                                                                                            
+                                                                                                        }
+                                                                                                        </span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                    </dl>
+                                                                                </section>
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                            <dt data-property-name="applied_measures">
+                                                <span class="json-property-name">applied_measures:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The measures used by the hospital (for example: uses cardiac surgery registry)</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                            <dt data-property-name="patient_survey">
+                                                <span class="json-property-name">patient_survey:</span>
+                                                <span class="json-property-type">object[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>a set of 1-5 star values as reported by patients</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">object</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                                <section class="json-schema-properties">
+                                                                                    <dl>
+                                                                                            <dt data-property-name="label">
+                                                                                                <span class="json-property-name">label:</span>
+                                                                                                <span class="json-property-type">string</span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                            <dt data-property-name="value">
+                                                                                                <span class="json-property-name">value:</span>
+                                                                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                    </dl>
+                                                                                </section>
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-NursingInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/NursingInfo"></a>NursingInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="ownership">
+                                                <span class="json-property-name">ownership:</span>
+                                                <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                <span class="json-property-enum-item">for-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">non-profit</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">government</span>
+                                                            
+                                                        }
+                                                        </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="beds">
+                                                <span class="json-property-name">beds:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>total number of beds in the facility</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="residents">
+                                                <span class="json-property-name">residents:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>current number of occupied beds</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="inside_hospital">
+                                                <span class="json-property-name">inside_hospital:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>is the facility within a hospital</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="is_ccrc">
+                                                <span class="json-property-name">is_ccrc:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>is the facility a Continuing Care Retirement Center</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="is_sff">
+                                                <span class="json-property-name">is_sff:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>is the facility a Special Focus Facility</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="number_of_incidents">
+                                                <span class="json-property-name">number_of_incidents:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="number_of_complaints">
+                                                <span class="json-property-name">number_of_complaints:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="number_of_fines">
+                                                <span class="json-property-name">number_of_fines:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="number_of_health_deficiencies">
+                                                <span class="json-property-name">number_of_health_deficiencies:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="number_of_fire_deficiencies">
+                                                <span class="json-property-name">number_of_fire_deficiencies:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-PhysicianInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/PhysicianInfo"></a>PhysicianInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="primary_specialty">
+                                                <span class="json-property-name">primary_specialty:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="secondary_specialties">
+                                                <span class="json-property-name">secondary_specialties:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                            <dt data-property-name="school_name">
+                                                <span class="json-property-name">school_name:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="group_pac">
+                                                <span class="json-property-name">group_pac:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The associated group&#39;s PAC id</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="hospital_affiliations">
+                                                <span class="json-property-name">hospital_affiliations:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                            <dt data-property-name="accepts_medicare_assignment">
+                                                <span class="json-property-name">accepts_medicare_assignment:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="reported_quality_measures">
+                                                <span class="json-property-name">reported_quality_measures:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="uses_ehr">
+                                                <span class="json-property-name">uses_ehr:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="million_hearts_initiative">
+                                                <span class="json-property-name">million_hearts_initiative:</span>
+                                                <span class="json-property-type">boolean</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="quality_measures">
+                                                <span class="json-property-name">quality_measures:</span>
+                                                <span class="json-property-type">object[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">object</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                                <section class="json-schema-properties">
+                                                                                    <dl>
+                                                                                            <dt data-property-name="question">
+                                                                                                <span class="json-property-name">question:</span>
+                                                                                                <span class="json-property-type">string</span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                <p>The text representation of the quality measure</p>
+                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                            <dt data-property-name="rating">
+                                                                                                <span class="json-property-name">rating:</span>
+                                                                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                
+                                                                                            </dt>
+                                                                                            <dd>
+                                                                                                <p>star rating of 1-5</p>
+                                                                                
+                                                                                                <div class="json-inner-schema">
+                                                                                                    
+                                                                                                </div>
+                                                                                            </dd>
+                                                                                    </dl>
+                                                                                </section>
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-Provider" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Provider"></a>Provider:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="id">
+                                                <span class="json-property-name">id:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The natural id of the provider, this may be an NPI for physicians
+                                or a CMS certification number for home health providers</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="name">
+                                                <span class="json-property-name">name:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The official name of the provider</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="phone">
+                                                <span class="json-property-name">phone:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>the 10-digit phone number</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="type">
+                                                <span class="json-property-name">type:</span>
+                                                <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                <span class="json-property-enum-item">home</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">dialysis</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">supplies</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">nursing</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">physician</span>
+                                                            ,
+                                                                <span class="json-property-enum-item">hospital</span>
+                                                            
+                                                        }
+                                                        </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The type of provider (ie: dialysis, nursing, hospital)</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="address">
+                                                <span class="json-property-name">address:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Address">Address</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="rating">
+                                                <span class="json-property-name">rating:</span>
+                                                <span class="json-property-type">number</span>    <span class="json-property-format">(integer)</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                <p>The overall 5-star rating of the provider, if available</p>
+                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="dialysis_info">
+                                                <span class="json-property-name">dialysis_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/DialysisInfo">DialysisInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="home_health_info">
+                                                <span class="json-property-name">home_health_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/HomeHealthInfo">HomeHealthInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="supplier_info">
+                                                <span class="json-property-name">supplier_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/SupplierInfo">SupplierInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="nursing_info">
+                                                <span class="json-property-name">nursing_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/NursingInfo">NursingInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="physician_info">
+                                                <span class="json-property-name">physician_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/PhysicianInfo">PhysicianInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="hospital_info">
+                                                <span class="json-property-name">hospital_info:</span>
+                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/HospitalInfo">HospitalInfo</a>
+                                                </span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>        
+                <div id="definition-SupplierInfo" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/SupplierInfo"></a>SupplierInfo:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                <section class="json-schema-properties">
+                                    <dl>
+                                            <dt data-property-name="bid_service_area">
+                                                <span class="json-property-name">bid_service_area:</span>
+                                                <span class="json-property-type">string</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                </div>
+                                            </dd>
+                                            <dt data-property-name="supplies">
+                                                <span class="json-property-name">supplies:</span>
+                                                <span class="json-property-type">string[]</span>
+                                                <span class="json-property-range" title="Value limits"></span>
+                                                
+                                            </dt>
+                                            <dd>
+                                                
+                                                <div class="json-inner-schema">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                                        <span class="json-property-enum-item">Oxygen Supplies and Equipment</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Mail-Order Diabetic Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Enteral Nutrients, Equipment and Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">CPAP Devices, Respiratory Assist Devices, and Related Supplies and Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hospital Beds and Related Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Negative Pressure Wound Therapy Pumps and Related Supplies and Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Walkers and Related Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Support Surfaces (Group 2 mattresses and overlays)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard (Power &amp; Manual) Wheelchairs, Scooters, and Related Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">External Infusion Pumps and Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Respiratory Equipment and  Related Supplies and Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Enteral Nutrients, Equipment and Supplies - Enteral Nutrients </span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Negative Pressure Wound Therapy (NPWT) Pumps and Related Supplies and Accessories - NPWT Pumps and Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories - Hospital Bed</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories - Commodes, Urinals, Bedpans</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories - Patient Lifts</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories - Seat Lift Mechanisms</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">General Home Equipment and Related Supplies and Accessories - Support Surfaces (Group 1 &amp; 2)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Respiratory Equipment and Related Supplies and Accessories - Continuous Positive Airway Pressure (CPAP Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Respiratory Equipment and Related Supplies and Accessories - Respiratory Assist Devices (RADs)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Respiratory Equipment and Related Supplies and Accessories - Oxygen Equipment and Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories - Wheelchairs (Standard Manual)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories - Wheelchairs (Standard Power)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories - Power Operated Vehicles (Scooters)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories - Wheelchair Seating/Cushions</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Standard Mobility Equipment and Related Accessories - Walkers</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Nebulizers and Related Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Transcutaneous Electrical Nerve Stimulation (TENS) Devices and Supplies - TENS Devices and Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Is Supplier Participating?</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Automatic External Defibrillators (AEDS)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Commodes, Urinals, &amp; Bedpans</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Continuous Passive Motion (CPM) Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Dynamic Splints</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Blood Glucose Monitors &amp; Supplies: Non-Mail Order</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Blood Glucose Monitors &amp; Supplies: Mail Order</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Blood Glucose Monitors: Mail Order</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Gastric Suction Pumps</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Heat &amp; Cold Applications</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hospital Beds: Electric</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hospital Beds: Total Electric &amp; Pediatric</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hospital Beds: Manual</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hospital Beds: Manual &amp; Pediatric</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Infrared Heating Pad Systems</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Infusion Pumps &amp; Supplies: External Infusion</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Infusion Pumps: Implantable &amp; Uninterrupted</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Infusion Pumps &amp; Supplies: Insulin Infusion</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Infusion Pumps &amp; Supplies: Implanted Infusion</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Negative Pressure Wound Therapy Pumps &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Neuromuscular Electrical Stimulators (NMES)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Osteogenesis Stimulators</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Pneumatic Compression Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Speech Generating Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Support Surfaces: Pressure Reducing Beds, Mattresses, Overlays, &amp; Pads</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Support Surfaces (e.g. Air Fluidized bed)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Traction Equipment</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Transcutaneous Electrical Nerve Stimulators (TENS) Units</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Ultraviolet Light Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Home Dialysis Equipment &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Hemodialysis Equipment &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Canes &amp; Crutches</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Patient Lifts</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Power Operated Vehicles (Scooters)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Seat Lift Mechanisms</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Walkers</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Standard Manual</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Standard Manual (e.g. Pediatrics)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Standard Power</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Standard Power (e.g. Pediatrics and custom cushions )</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Complex Rehabilitative Manual</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Complex Rehabilitative Power</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchairs &amp; Accessories: Complex Rehabilitative Power (e.g. Group 3, Group 4, Group 5)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchair Seating/Cushions</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Wheelchair Seating/Cushions (e.g. skin protecting seat cushions)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Orthoses: Custom Fabricated</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Orthoses: Prefabricated</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Orthoses: Off-the-Shelf</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Breast Prostheses &amp; Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Cochlear Implants</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Facial Prostheses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Neurostimulators</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Ocular Prostheses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Ostomy Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Somatic Prostheses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Tracheostomy Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Urological Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Voice Prosthetics</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Prosthetic Lenses: Conventional Eyeglasses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Prosthetic Lenses: Conventional Contact Lenses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Prosthetic Lenses: Prosthetic Cataract Lenses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Enteral Nutrients, Equipment, &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Enteral Nutrients &amp; Supplies for Special Metabolic Needs and Pediatrics</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Parenteral Nutrients, Equipment &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Limb Prostheses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Eye Prostheses</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">CPAP, RADs, &amp; Related Supplies &amp; Accessories</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">CPAP and RADs Supplies (e.g. combination masks)</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">High Frequency Chest Wall Oscillation (HFCWO) Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Invasive Mechanical Ventilation</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Intermittent Positive Pressure Breathing (IPPB) Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Intrapulmonary Percussive Ventilation Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Mechanical In-Exsufflation Devices</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Nebulizer Equipment &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Nebulizer Equipment: Ultrasonic and Controlled Dose</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Oxygen Equipment &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Respiratory Suction Pumps</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Ventilators, Accessories &amp; Supplies</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Surgical Dressings</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Diabetic Shoes &amp; Inserts: Prefabricated</span>
+                                                                                    ,
+                                                                                        <span class="json-property-enum-item">Diabetic Shoes &amp; Inserts: Custom Fabricate</span>
+                                                                                    
+                                                                                }
+                                                                                </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>                </div>
+                                            </dd>
+                                    </dl>
+                                </section>
+                    </div>
+                </div>
+</div>
+</body>
+</html>
