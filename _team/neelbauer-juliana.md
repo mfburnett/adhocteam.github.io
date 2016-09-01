@@ -2,7 +2,7 @@
 # Your Name
 title: Juliana Neelbauer
 # Add your position at the company
-position: COO
+position: Chief Operating Officer
 # Your Github Username
 github_username: neelbauer1
 # add the filename of the image you uploaded to the end of the
