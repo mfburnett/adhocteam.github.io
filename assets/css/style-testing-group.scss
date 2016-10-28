@@ -1,0 +1,18 @@
+---
+---
+
+// Make sure the charset is set appropriately
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "foundation/variables";
+
+// Foundation Components
+@import
+  "foundation/components/global",
+  "foundation/components/grid",
+  "foundation/components/block-grid",
+  "foundation/components/type",
+  "foundation/components/buttons",
+  "foundation/components/visibility",
+  "foundation/components/inline-lists",
+  "testinggroup";

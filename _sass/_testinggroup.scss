@@ -1,0 +1,199 @@
+// Ad Hoc Testing Group
+
+
+// Colors
+
+$primary-color: #0071BC;
+$secondary-color: #333333;
+$body-content-color: #333333;
+$body-accent-color: #F4F2F1;
+$body-background-color: #fff;
+$action-color: #E15A38;
+
+// General
+
+html, body {
+  font-family: "proxima-nova", sans-serif;
+  color: $body-content-color;
+  color: #444;
+  font-size: 18px;
+}
+
+
+a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: $primary-color;
+  &:hover, &:active, &:focus {color: $secondary-color;}
+}
+
+abbr {
+  border-bottom: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+// Logo and Header
+
+.header {
+  width: 100%;
+  a {border-bottom: none;}
+  clear: both;
+  padding: 0 0 .5em 0;
+  h1 a {
+    font-size: .8em;
+    margin-bottom: 0;
+    line-height: 1em;
+  color: $secondary-color;
+  font-weight: normal;
+  em {
+    font-weight: bold;
+    font-style: normal;
+    color: $primary-color;
+  }
+  }
+}
+
+
+
+// Type
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: "proxima-nova", sans-serif;
+}
+
+html.wf-loading {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+p, ul, ol, dl, {
+  font-weight: 300;
+  color: #444;
+}
+
+// Header
+
+.header {
+  color: #fff;
+  padding: 1em 0;
+}
+
+// Page
+
+.page {
+  background: #fff;
+  padding: 2em 0;
+}
+
+// Fade animation
+
+.animated {
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.pitch {
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+// Bands
+
+.band {
+  padding: 3em 0;
+  p {font-size: 1.25em;}
+  a {text-decoration: underline;}
+
+  &.hero {
+    padding: 10em 0;
+    background: url(/assets/img/design/testing-group/hero.jpg) top center no-repeat;
+    background-size: cover;
+    text-align: right;
+
+    h2 {
+      color: #fff;
+      line-height: 1em;
+      font-size: 2.75em;
+      padding: .15em .25em;
+      display: inline-block;
+      background-color: rgba(0,113,188,.95);
+      background-blend-mode: multiply;
+
+    }
+
+  }
+
+  &.primary {
+    background: #eee;
+  }
+
+  &.secondary {
+
+  }
+
+}
+
+header h1 {
+  color: $secondary-color;
+  em {font-weight: normal; font-style: normal; color: $primary-color;}
+}
+
+// Footer
+
+footer {
+  background: $primary-color;
+  color: #fff;
+  a {color: #fff;}
+  text-align: left;
+  padding: 1em 0 .75em 0;
+  ul.inline {
+    margin: 0; padding: 0;
+      li {
+        text-align: left;
+        list-style-type: none;
+        list-style: none;
+        display: inline-block;
+        padding: .5em 1em;
+      }
+  }
+
+}
