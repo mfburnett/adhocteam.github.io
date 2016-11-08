@@ -1,6 +1,6 @@
 ---
 title: Paul Smith
-position: Chief Technology Officer
+position: Chief Technology Officer & Co-founder 
 github_username: paulsmith
 photo: /assets/img/content/paul.jpg
 links:

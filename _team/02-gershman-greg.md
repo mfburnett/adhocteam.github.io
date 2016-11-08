@@ -1,6 +1,6 @@
 ---
 title: Greg Gershman
-position: Chief Executive Officer
+position: Chief Executive Officer & Co-founder 
 github_username: greggersh
 photo: /assets/img/content/greg.jpg
 links:
