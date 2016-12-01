@@ -15,4 +15,4 @@ links:
     url: https://www.linkedin.com/in/elilewis
 ---
 
-Elizabeth joins Ad Hoc with 15 years of project/program management experience ranging from process improvement to software implementations and everything in between.  She thrives off projects that result change and postitive user impact.
+Elizabeth joins Ad Hoc with 15 years of project/program management experience ranging from process improvement to software implementations and everything in between.  She thrives off projects that result in change and a positive user impact.
