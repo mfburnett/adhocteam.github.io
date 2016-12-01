@@ -14,7 +14,7 @@ links:
   # Follow this format, for each link
   # - title: 
   #   url:
-  - title:LinkedIn
+  - title: LinkedIn
     url: https://www.linkedin.com/in/ian-topper
 ---
 
